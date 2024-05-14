@@ -11,8 +11,8 @@ body{
     background-position: center;
 }
 #loginPage>form{
-    height: 520px;
-    width: 400px;
+    height: 420px;
+    width: 300px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -71,10 +71,15 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
+#loginPage>form>a>span{
+    font-size: 14px;
+    font-weight: 300;
+    color: #080710;
+}
 #loginPage>form>a{
     position: absolute;
-    bottom: 45px;
-    right: 200px;
-    font-size: 14px;
+    bottom: 30px;
+    right: 140px;
+    font-size: 20px;
     text-decoration: none;
 }
