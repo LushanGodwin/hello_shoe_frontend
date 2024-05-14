@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>Login Page</title>
     <link rel="stylesheet" href="assets/normalize/normalize.css">
-    <link rel="stylesheet" href="assets/style/style.css">
+    <link rel="stylesheet" href="assets/style/loginPage.css">
+    <link rel="stylesheet" href="assets/style/registerPage.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
@@ -21,9 +22,27 @@
         <label for="password">Password</label>
         <input type="password" placeholder="Password" id="password">
 
-        <button>Log In</button>
-        <a href="#"><span>or </span>Sign Up</a>
+        <button> Log In</button>
+        <a href="#registerPage" onclick="showRegisterPage()"><span>or </span>Sign Up</a>
     </form>
 </section>
+<section id="registerPage">
+    <form>
+        <h3>Register Here</h3>
+
+        <label for="username1">Username</label>
+        <input type="text" placeholder="User name or Email" id="username1">
+
+        <label for="password1">Password</label>
+        <input type="password" placeholder="Password" id="password1">
+
+        <a href="#loginPage" onclick="showLoginPage()"><button>Sign Up</button></a>
+    </form>
+</section>
+
+
+<script src="assets/bootstrap-5.3.1-dist/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap-5.3.1-dist/js/jquery_min.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
