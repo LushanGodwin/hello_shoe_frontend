@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="assets/normalize/normalize.css">
     <link rel="stylesheet" href="assets/style/loginPage.css">
     <link rel="stylesheet" href="assets/style/registerPage.css">
+    <link rel="stylesheet" href="assets/style/dashboardPage.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
 </head>
 <body>
 <section id="loginPage">
@@ -24,7 +25,7 @@
         <label for="password">Password</label>
         <input type="password" placeholder="Password" id="password">
 
-        <button type="button"> Log In</button>
+        <button type="button" id="loginBtn"> Log In</button>
         <a id="signUpBtn"><span>or </span>Sign Up</a>
     </form>
 </section>
@@ -41,11 +42,44 @@
         <a ><button type="button" id="signUpBtn1">Sign Up</button></a>
     </form>
 </section>
+<section id="dashboardPage">
+    <div class="app">
+        <div id="sidenav">
+            <div class="wrapper">
+                <div class="logo">
+                    <h1>Hello Shoe Pvt.Ltd</h1>
+                    <a  class="nav-icon pull-right"></a>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li class="active">
+                            <a><i class="fa-regular fa-compass" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Dashboard</a>
+                        </li>
+                        <li><a><i class="fa-solid fa-users" style="color: #ffffff;"></i>&nbsp;&nbsp;Employee</a></li>
+                        <li>
+                            <a><i class="fa-solid fa-up-right-and-down-left-from-center" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Inventory</a>
+                            <ul>
+                                <li><a>&nbsp;&nbsp;Inventory</a></li>
+                                <li><a>&nbsp;&nbsp;Size</a></li>
+                            </ul>
+                        </li>
+                        <li><a><i class="fa-regular fa-user" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Customer</a></li>
+                        <li><a><i class="fa-solid fa-users" style="color: #ffffff;"></i>&nbsp;&nbsp;Supplier</a></li>
+                        <li><a><i class="fa-solid fa-universal-access" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Sale</a></li>
+                        <li><a class="logout"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="shoePic"></div>
+    </div>
+</section>
 
 
 
 
 <script src="assets/lib/jquery_min.js"></script>
+<script src="assets/lib/"></script>
 <script src="assets/js/script.js"></script>
 </body>
 </html>
