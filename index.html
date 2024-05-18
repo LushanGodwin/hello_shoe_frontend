@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
 <body>
 <section id="loginPage">
@@ -71,7 +72,35 @@
                 </div>
             </div>
         </div>
-        <div id="shoePic"></div>
+
+        <section class="dashboard">
+            <div id="shoePic"></div>
+            <div id="customerCount">
+                <label>Customer Count</label>
+                <span>100</span>
+            </div>
+            <div id="stockCount">
+                <label>Stock Count</label>
+                <span>100</span>
+            </div>
+            <div id="orderCount">
+                <label>Order Count</label>
+                <span>100</span>
+            </div>
+            <div id="employeeCount">
+                <label>Employee Count</label>
+                <span>100</span>
+            </div>
+        </section>
+
+        <section class="chart" id="chart_id">
+            <canvas id="myChart"></canvas>
+        </section>
+
+        <section class="chart" id="chart_id1">
+            <canvas id="myChart1"></canvas>
+        </section>
+
     </div>
 </section>
 
@@ -79,7 +108,58 @@
 
 
 <script src="assets/lib/jquery_min.js"></script>
-<script src="assets/lib/"></script>
 <script src="assets/js/script.js"></script>
+
+<script>
+    const xValues = ["Jan", "Feb", "Mar", "Apr", "May"];
+    const yValues = [55, 49, 44, 24, 19];
+    const barColors = ["#440504", "#C34509","#220716","#17BCC1","#B19260"];
+
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: {display: false},
+            title: {
+                display: true,
+                text: "Hello Shoe World"
+            }
+        }
+    });
+</script>
+
+<script>
+    console.log("script 2")
+    const xValues1 = ["Italy", "France", "Spain", "USA", "Argentina"];
+    const yValues1 = [55, 49, 44, 24, 15];
+    const barColors1 = [
+        "#440504", "#C34509","#220716","#17BCC1","#B19260"
+    ];
+
+    new Chart("myChart1", {
+        type: "pie",
+        data: {
+            labels: xValues1,
+            datasets: [{
+                backgroundColor: barColors1,
+                data: yValues1
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "World Wide Shoe Production 2024"
+            }
+        }
+    });
+</script>
+
+
 </body>
 </html>
