@@ -52,7 +52,7 @@ $(document).ready(function(){
         loadingScreen3.style.display = 'none';
     });
 
-    $('#loginBtn').eq(0).on('click', function() {
+    /*$('#loginBtn').eq(0).on('click', function() {
         const loadingScreen = document.querySelector('#loginPage');
         loadingScreen.style.display = 'none';
 
@@ -60,8 +60,8 @@ $(document).ready(function(){
         loadingScreen2.style.display = 'none';
 
         const loadingScreen3 = document.querySelector('#dashboardPage');
-        loadingScreen3.style.display = 'block';
-    })
+        loadingScreen3.style.display = 'none';
+    });*/
 });
 
 
