@@ -122,8 +122,18 @@ body {
     }
 }
 
-#dashboardPage>.app>.dashboard>#shoePic{
-    position: relative;
+#dashboardComponents{
+    position: absolute;
+    top: 14px;
+    left: 350px;
+    width:1150px;
+    height: 700px;
+    background-color: #F9FBE7;
+    border-radius: 15px;
+}
+
+#shoePic{
+    position: absolute;
     width: 465px;
     height:338px;
     /*background-color: black;*/
@@ -133,22 +143,22 @@ body {
     background-size: cover;
     border-radius: 15px;
     top: 10px;
-    left: 350px;
+    left: 20px;
 }
 
-#dashboardPage>.app>.dashboard>#customerCount{
+#customerCount{
     width: 250px;
     height: 150px;
     border-radius: 10px;
    // background-color: firebrick;
-    background-color: #0F9BA3;
-    opacity: 0.5;
+    background-color: #B70404;
+    opacity: 0.9;
     position: absolute;
     top: 20px;
-    left: 880px;
+    left: 550px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-#dashboardPage>.app>.dashboard>#customerCount>label{
+#customerCount>label{
     color: black;
     font-family: "Times New Roman";
     font-weight: bold;
@@ -157,7 +167,7 @@ body {
     top: -15px;
     left: 36px;
 }
-#dashboardPage>.app>.dashboard>#customerCount>span{
+#customerCount>span{
     color: black;
     font-size: 25px;
     font-weight: 500;
@@ -165,19 +175,19 @@ body {
     top: 50px;
     left: 100px;
 }
-#dashboardPage>.app>.dashboard>#stockCount{
+#stockCount{
     width: 250px;
     height: 150px;
     border-radius: 10px;
 // background-color: firebrick;
-    background-color: #0F9BA3;
-    opacity: 0.5;
+    background-color: #B70404;
+    opacity: 0.9;
     position: absolute;
     top: 20px;
-    left: 1200px;
+    left: 850px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-#dashboardPage>.app>.dashboard>#stockCount>label{
+#stockCount>label{
     color: black;
     font-family: "Times New Roman";
     font-weight: bold;
@@ -186,7 +196,7 @@ body {
     top: -15px;
     left: 55px;
 }
-#dashboardPage>.app>.dashboard>#stockCount>span{
+#stockCount>span{
     color: black;
     font-size: 25px;
     font-weight: 500;
@@ -194,19 +204,19 @@ body {
     top: 50px;
     left: 100px;
 }
-#dashboardPage>.app>.dashboard>#orderCount{
+#orderCount{
     width: 250px;
     height: 150px;
     border-radius: 10px;
 // background-color: firebrick;
-    background-color: #0F9BA3;
-    opacity: 0.5;
+    background-color: #B70404;
+    opacity: 0.9;
     position: absolute;
     top: 200px;
-    left: 880px;
+    left: 550px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-#dashboardPage>.app>.dashboard>#orderCount>label{
+#orderCount>label{
     color: black;
     font-family: "Times New Roman";
     font-weight: bold;
@@ -215,7 +225,7 @@ body {
     top: -15px;
     left: 50px;
 }
-#dashboardPage>.app>.dashboard>#orderCount>span{
+#orderCount>span{
     color: black;
     font-size: 25px;
     font-weight: 500;
@@ -223,19 +233,19 @@ body {
     top: 50px;
     left: 100px;
 }
-#dashboardPage>.app>.dashboard>#employeeCount{
+#employeeCount{
     width: 250px;
     height: 150px;
     border-radius: 10px;
 // background-color: firebrick;
-    background-color: #0F9BA3;
-    opacity: 0.5;
+    background-color: #B70404;
+    opacity: 0.9;
     position: absolute;
     top: 200px;
-    left: 1200px;
+    left: 850px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
-#dashboardPage>.app>.dashboard>#employeeCount>label{
+#employeeCount>label{
     color: black;
     font-family: "Times New Roman";
     font-weight: bold;
@@ -244,7 +254,7 @@ body {
     top: -15px;
     left: 36px;
 }
-#dashboardPage>.app>.dashboard>#employeeCount>span{
+#employeeCount>span{
     color: black;
     font-size: 25px;
     font-weight: 500;
@@ -257,14 +267,14 @@ body {
     position: relative;
     width:465px;
     max-width:600px;
-    top: 90px;
-    left: 350px;
+    top: 400px;
+    left: 20px;
 }
 
 #chart_id1{
     width:465px;
     max-width:600px;
     position:absolute;
-    top: 420px;
-    left: 900px;
+    top: 400px;
+    left: 600px;
 }
