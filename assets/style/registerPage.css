@@ -61,7 +61,7 @@ body{
 }
 #registerPage>form>a>button{
     margin-top: 50px;
-    width: 100%;
+    width: 45%;
     background-color: #ffffff;
     color: #080710;
     padding: 15px 0;
@@ -69,4 +69,8 @@ body{
     font-weight: 600;
     border-radius: 5px;
     cursor: pointer;
+}
+#BranchBtn{
+    position: absolute;
+    left: 190px;
 }

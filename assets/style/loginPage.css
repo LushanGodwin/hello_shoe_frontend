@@ -62,7 +62,8 @@ body{
 }
 #loginPage>form>button{
     margin-top: 50px;
-    width: 100%;
+    margin-left: 75px;
+    width: 50%;
     background-color: #ffffff;
     color: #080710;
     padding: 15px 0;
