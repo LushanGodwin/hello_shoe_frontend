@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/style/loginPage.css">
     <link rel="stylesheet" href="assets/style/registerPage.css">
     <link rel="stylesheet" href="assets/style/dashboardPage.css">
+    <link rel="stylesheet" href="assets/style/branchPage.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -40,7 +41,24 @@
         <label for="password1">Password</label>
         <input type="password" placeholder="Password" id="password1">
 
+        <label for="roleId">Role</label>
+        <input type="text" placeholder="Role" id="roleId">
+
         <a ><button type="button" id="signUpBtn1">Sign Up</button></a>
+        <a ><button type="button" id="BranchBtn">Set Branch</button></a>
+    </form>
+</section>
+<section id="BranchPage">
+    <form>
+        <h3>Set Branch Here</h3>
+
+        <label for="branchName">Branch Name</label>
+        <input type="text" placeholder="Branch Name" id="branchName">
+
+        <label for="productCode">Product Code</label>
+        <input type="text" placeholder="Product Code" id="productCode">
+
+        <a ><button type="button" id="BranchBtn1">Save Branch</button></a>
     </form>
 </section>
 <section id="dashboardPage">
@@ -104,7 +122,6 @@
 
     </div>
 </section>
-<section id="employeePage"></section>
 
 
 <script src="assets/lib/jquery_min.js"></script>
