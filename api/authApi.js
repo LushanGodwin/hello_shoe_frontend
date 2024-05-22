@@ -27,4 +27,8 @@ export class AuthApi{
     async signIn(signIn){
         return this.handleHttpRequest("http://localhost:8080/shoe/api/v1/auth/signIn", "POST", signIn);
     }
+
+    async signUp(signUp){
+        return this.handleHttpRequest("http://localhost:8080/shoe/api/v1/auth/signUp", "POST", signUp);
+    }
 }
