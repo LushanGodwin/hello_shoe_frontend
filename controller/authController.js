@@ -18,7 +18,8 @@ let globalToken = null;
 const loadingScreen = document.querySelector('#loginPage');
 const loadingScreen2 = document.querySelector('#registerPage');
 const loadingScreen3 = document.querySelector('#dashboardPage');
-const loadingScreen4 = document.querySelector('#setBranchPage')
+const loadingScreen4 = document.querySelector('#setBranchPage');
+const loadingScreen5 = document.querySelector('#sidenav');
 
 signInButton.on('click', (event) => {
 
@@ -45,6 +46,8 @@ signInButton.on('click', (event) => {
         loadingScreen3.style.display = 'block';
 
         loadingScreen4.style.display = 'none';
+
+        loadingScreen5.style.display = 'block';
 
         email.val('');
         password.val('');

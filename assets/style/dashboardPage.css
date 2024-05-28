@@ -44,7 +44,7 @@ body {
 #sidenav .menu ul {
     list-style: none;
     background: #101010;
-    padding: 10% 10px;
+    padding: 20% 10px;
     margin: 0;
 }
 #sidenav .menu ul li {
@@ -58,13 +58,14 @@ body {
     color: white;
 }
 #sidenav .menu ul li.active {
-    border-left: solid 2px red;
+    border-left: solid 1px red;
 }
 #sidenav .menu ul li a {
     font-size: 22px;
     color: rgba(255, 255, 255, 0.7);
     font-weight: 300;
     display: block;
+    cursor: pointer;
 }
 #sidenav .menu ul li a:hover {
     color: rgba(255, 255, 255, 0.5);

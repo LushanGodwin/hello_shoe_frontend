@@ -11,8 +11,8 @@ body{
     background-position: center;
 }
 #loginPage>form{
-    height: 420px;
-    width: 300px;
+    height: 500px;
+    width: 350px;
     background-color: rgba(255,255,255,0.13);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -80,7 +80,7 @@ body{
 #loginPage>form>a{
     position: absolute;
     bottom: 30px;
-    right: 140px;
+    right: 125px;
     font-size: 20px;
     text-decoration: none;
     cursor: pointer;
