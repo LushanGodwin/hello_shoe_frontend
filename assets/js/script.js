@@ -1,104 +1,94 @@
-/*
+const loadingScreen = document.querySelector('#registerPage');
+const loadingScreen1 = document.querySelector('#loginPage');
+const loadingScreen2 = document.querySelector('#dashboardPage');
+const loadingScreen3 = document.querySelector('#BranchPage');
+const loadingScreen4 = document.querySelector('#employeePage');
+const loadingScreen5 = document.querySelector('#productPage');
+const loadingScreen6 = document.querySelector('#orderPage');
+const loadingScreen7 = document.querySelector('#customerPage');
+const loadingScreen8 = document.querySelector('#supplierPage');
+const loadingScreen9 = document.querySelector('#stockPage');
+const components = document.querySelector('#dashboardComponents');
+const components1 = document.querySelector('#employeeSection');
+const components2 = document.querySelector('#productSection');
+const components3 = document.querySelector('#orderSection');
+const components4 = document.querySelector('#customerSection');
+const components5 = document.querySelector('#supplierSection');
+const components6 = document.querySelector('#stockSection');
 
-$(document).ready(function() {
-    // Initially show the register page
-    $('#registerPage').show();
-    $('#loginPage').hide();
-
-    window.showLoginPage = function() {
-        $('#loginPage').show();
-        $('#registerPage').hide();
-    }
-
-    window.showRegisterPage = function() {
-        $('#loginPage').hide();
-        $('#registerPage').show();
-    }
-});
-*/
 window.addEventListener('load',function (){
-    const loadingScreen = document.querySelector('#registerPage');
     loadingScreen.style.display = 'none';
-
-    const loadingScreen1 = document.querySelector('#loginPage');
     loadingScreen1.style.display = 'flex';
-
-    const loadingScreen2 = document.querySelector('#dashboardPage');
     loadingScreen2.style.display = 'none';
-
-    const loadingScreen3 = document.querySelector('#BranchPage');
     loadingScreen3.style.display = 'none';
+    loadingScreen4.style.display = 'none';
+    loadingScreen7.style.display = 'none';
+
 
 });
 
 
 $(document).ready(function(){
    $('#signUpBtn').eq(0).on('click', function() {
-      const loadingScreen = document.querySelector('#loginPage');
-      loadingScreen.style.display = 'none';
-
-      const loadingScreen2 = document.querySelector('#registerPage');
-      loadingScreen2.style.display = 'block';
-
-      const loadingScreen3 = document.querySelector('#dashboardPage');
+      loadingScreen1.style.display = 'none';
+      loadingScreen.style.display = 'block';
+      loadingScreen2.style.display = 'none';
       loadingScreen3.style.display = 'none';
-
-      const loadingScreen4 = document.querySelector('#BranchPage');
       loadingScreen4.style.display = 'none';
+      loadingScreen7.style.display = 'none';
+
+
    });
 
     $('#signUpBtn1').eq(0).on('click', function() {
-        const loadingScreen = document.querySelector('#loginPage');
-        loadingScreen.style.display = 'block';
-
-        const loadingScreen2 = document.querySelector('#registerPage');
+        loadingScreen1.style.display = 'block';
+        loadingScreen.style.display = 'none';
         loadingScreen2.style.display = 'none';
-
-        const loadingScreen3 = document.querySelector('#dashboardPage');
         loadingScreen3.style.display = 'none';
-
-        const loadingScreen4 = document.querySelector('#BranchPage');
         loadingScreen4.style.display = 'none';
+        loadingScreen7.style.display = 'none';
+
     });
 
-    /*$('#loginBtn').eq(0).on('click', function() {
-        const loadingScreen = document.querySelector('#loginPage');
-        loadingScreen.style.display = 'none';
-
-        const loadingScreen2 = document.querySelector('#registerPage');
-        loadingScreen2.style.display = 'none';
-
-        const loadingScreen3 = document.querySelector('#dashboardPage');
-        loadingScreen3.style.display = 'none';
-    });*/
 
     $('#BranchBtn').eq(0).on('click', function() {
-        const loadingScreen = document.querySelector('#loginPage');
+        loadingScreen1.style.display = 'none';
         loadingScreen.style.display = 'none';
-
-        const loadingScreen2 = document.querySelector('#registerPage');
         loadingScreen2.style.display = 'none';
+        loadingScreen3.style.display = 'block';
+        loadingScreen4.style.display = 'none';
+        loadingScreen7.style.display = 'none';
 
-        const loadingScreen3 = document.querySelector('#dashboardPage');
-        loadingScreen3.style.display = 'none';
-
-        const loadingScreen4 = document.querySelector('#BranchPage');
-        loadingScreen4.style.display = 'block';
     });
 
     $('#BranchBtn1').eq(0).on('click', function() {
-        const loadingScreen = document.querySelector('#loginPage');
-        loadingScreen.style.display = 'block';
-
-        const loadingScreen2 = document.querySelector('#registerPage');
+        loadingScreen1.style.display = 'block';
+        loadingScreen.style.display = 'none';
         loadingScreen2.style.display = 'none';
-
-        const loadingScreen3 = document.querySelector('#dashboardPage');
         loadingScreen3.style.display = 'none';
-
-        const loadingScreen4 = document.querySelector('#BranchPage');
         loadingScreen4.style.display = 'none';
+        loadingScreen7.style.display = 'none';
+
     });
+
+    $('#employee').eq(0).on('click', function() {
+        loadingScreen4.style.display = 'block';
+        components.style.display = 'none';
+        components1.style.display = 'none';
+        components2.style.display = 'none';
+        components3.style.display = 'none';
+        components4.style.display = 'none';
+        components5.style.display = 'none';
+        components6.style.display = 'none';
+    })
+
+    $('#customers').eq(0).on('click', function() {
+        loadingScreen7.style.display = 'block';
+        components.style.display = 'none';
+        components1.style.display = 'none';
+    })
 });
+
+
 
 
