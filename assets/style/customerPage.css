@@ -8,7 +8,7 @@
     background-color: #F9FBE7;
     border-radius: 15px;
 }
-#tblCustomerRes{
+/*#tblCustomerRes{
     position: relative;
     height: 500px
 }
@@ -16,6 +16,10 @@
     background-color: #002d72;
     text-align: center;
 }
-#customer.btn btn-success add-btn{
-    width: 200px;
-}
+#cust-table-body{
+    background-color: #dadada;
+    opacity: 0.4;
+}*/
+/*#customer.btn btn-success add-btn{
+    width: 50px;
+}*/

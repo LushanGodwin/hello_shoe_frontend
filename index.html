@@ -10,14 +10,21 @@
     <link rel="stylesheet" href="assets/style/branchPage.css">
     <link rel="stylesheet" href="assets/style/employeePage.css">
     <link rel="stylesheet" href="assets/style/customerPage.css">
+    <link rel="stylesheet" href="assets/style/orderPage.css">
+    <link rel="stylesheet" href="assets/style/productPage.css">
+    <link rel="stylesheet" href="assets/style/stockPage.css">
+    <link rel="stylesheet" href="assets/style/supplierPage.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
 <body>
 <section id="loginPage">
@@ -79,7 +86,7 @@
                         <li id="product"><a><i class="fa-solid fa-users" style="color: #ffffff;"></i>&nbsp;&nbsp;Product</a></li>
                         <li id="order"><a><i class="fa-solid fa-users" style="color: #ffffff;"></i>&nbsp;&nbsp;Order</a></li>
                         <li id="customers"><a><i class="fa-regular fa-user" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Customer</a></li>
-                        <li id="supplier"><a><i class="fa-solid fa-users" style="color: #ffffff;"></i>&nbsp;&nbsp;Supplier</a></li>
+                        <li id="suppliers"><a><i class="fa-solid fa-users" style="color: #ffffff;"></i>&nbsp;&nbsp;Supplier</a></li>
                         <li id="stock"><a><i class="fa-solid fa-universal-access" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Stock</a></li>
                         <li id="logout"><a class="logout"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Sign Out</a></li>
                     </ul>
@@ -144,11 +151,11 @@
                                 <div class="col-12">
                                     <div class="card">
                                         <div class="card-body p-0">
-                                            <div id="tblCustomerRes" class="table-responsive table-scroll">
-                                                 <!--style="position: relative; height: 500px;"-->
+                                            <div id="tblCustomerRes" class="table-responsive table-scroll"
+                                                 style="position: relative; height: 500px;">
                                                 <table id="customerTable" class="table table-striped mb-0">
-                                                    <thead> <!--style="background-color: #002d72; text-align: center;"-->
-                                                    <tr>
+                                                    <thead style="background-color: #320D27; text-align: center;">
+                                                    <tr style="color: #dadada">
                                                         <th scope="col">ID</th>
                                                         <th scope="col">Name</th>
                                                         <th scope="col">Gender</th>
@@ -165,14 +172,14 @@
                                                         <th scope="col">Delete</th>
                                                     </tr>
                                                     </thead>
-                                                    <tbody id="cust-table-body">
+                                                    <tbody id="cust-table-body" style="background-color: #dadada">
                                                     <!-- Dynamic data goes here -->
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
 
-                                        <button class="btn btn-success add-btn" data-toggle="modal"
+                                        <button class="btn btn-success add-btn" data-toggle="modal" style="width: 200px; background-color: #320D27;"
                                                 data-target="#customerModal" id="custAddBtn">
                                             Add New Customer
                                         </button>
@@ -310,7 +317,165 @@
 </section>
 <section id="supplierPage" class="section">
     <div id="supplierSection">
+        <div class="supplier-content" id="supplier">
+            <section class="intro">
+                <div class="bg-image h-100" style="background-color: #f5f7fa;">
+                    <div class="mask d-flex align-items-center h-100">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-body p-0">
+                                            <div class="table-responsive table-scroll"
+                                                 style="position: relative; height: 500px;">
+                                                <table class="table table-striped mb-0">
+                                                    <thead style="background-color: #002d72; text-align: center;">
+                                                    <tr>
+                                                        <th scope="col">ID</th>
+                                                        <th scope="col">Name</th>
+                                                        <th scope="col">Category</th>
+                                                        <th scope="col">Address</th>
+                                                        <th scope="col">Postal Code</th>
+                                                        <th scope="col">Country</th>
+                                                        <th scope="col">Contact No 1</th>
+                                                        <th scope="col">Contact No 2</th>
+                                                        <th scope="col">Email</th>
+                                                        <th scope="col">Update</th>
+                                                        <th scope="col">Delete</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody id="sup-table-body">
+                                                    <!-- Dynamic data goes here -->
+                                                    </tbody>
+                                                </table>
 
+                                            </div>
+                                        </div>
+
+                                        <button class="btn btn-success add-btn" style="width: 200px;"
+                                                data-toggle="modal" data-target="#supplierModal" id="supAddBtn">
+                                            Add New Supplier
+                                        </button>
+
+                                        <div class="modal fade" id="supplierModal" tabindex="-1" role="dialog"
+                                             aria-labelledby="addSupplierModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <form id="supplierForm">
+                                                            <h4 id="supplierFormHeading">Add New Supplier</h4>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="sup-id">Supplier ID</label>
+                                                                    <input type="text" class="form-control"
+                                                                           id="sup-id"
+                                                                           placeholder="Enter Supplier ID" required
+                                                                           disabled>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="sup-name">Supplier Name</label>
+                                                                    <input type="text" class="form-control" id="sup-name"
+                                                                           placeholder="Enter Full Supplier Name" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="sup-category">Category</label>
+                                                                    <select class="form-control" id="sup-category" required>
+                                                                        <option value="">Select Category</option>
+                                                                        <option value="INTERNATIONAL">International</option>
+                                                                        <option value="LOCAL">Local</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="sup-address1">Address Line 1</label>
+                                                                    <input type="text" class="form-control"
+                                                                           id="sup-address1"
+                                                                           placeholder="Enter Address Line 1" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="sup-address2">Address Line 2</label>
+                                                                    <input type="text" class="form-control"
+                                                                           id="sup-address2"
+                                                                           placeholder="Enter Address Line 2" required>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="sup-address3">Address Line 3</label>
+                                                                    <input type="text" class="form-control"
+                                                                           id="sup-address3"
+                                                                           placeholder="Enter Address Line 3" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="sup-address4">Address Line 4</label>
+                                                                    <input type="text" class="form-control"
+                                                                           id="sup-address4"
+                                                                           placeholder="Enter Address Line 4" required>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="sup-address4">Address Line 5</label>
+                                                                    <input type="text" class="form-control"
+                                                                           id="sup-address5"
+                                                                           placeholder="Enter Address Line 5" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="sup-country">Country</label>
+                                                                    <select class="form-control" id="sup-country" required>
+                                                                        <option value="">Select Country</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="sup-contact-1">Contact No 1</label>
+                                                                    <input type="tel" class="form-control" id="sup-contact-1"
+                                                                           placeholder="Enter Contact No 1"
+                                                                           pattern="^\+?[0-9\-\\s]+$" required>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="sup-contact-2">Contact No 2</label>
+                                                                    <input type="tel" class="form-control" id="sup-contact-2"
+                                                                           placeholder="Enter Contact No 2"
+                                                                           pattern="^\+?[0-9\-\\s]+$" required>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="sup-email">Email</label>
+                                                                    <input type="email" class="form-control" id="sup-email"
+                                                                           placeholder="Enter Email" required>
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit" class="btn btn-success"
+                                                                    id="sup-save-update-btn">Save</button>
+                                                            <button type="button" class="btn btn-dark" id="supClear">
+                                                                Clear
+                                                            </button>
+                                                            <button hidden type="reset" class="btn btn-dark"
+                                                                    id="supReset">Reset
+                                                            </button>
+                                                        </form>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                                data-dismiss="modal">Close
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 </section>
 <section id="stockPage" class="section">
@@ -321,14 +486,19 @@
 
 
 <script src="assets/lib/jquery_min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="assets/js/script.js"></script>
 
 <script type="module" src="controller/authController.js"></script>
+<script type="module" src="controller/customerController.js"></script>
+<script type="module" src="controller/branchController.js"></script>
+<script type="module" src="controller/supplierController.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script>
     const xValues = ["Jan", "Feb", "Mar", "Apr", "May"];
@@ -355,7 +525,6 @@
 </script>
 
 <script>
-    console.log("script 2")
     const xValues1 = ["Italy", "France", "Spain", "USA", "Argentina"];
     const yValues1 = [55, 49, 44, 24, 15];
     const barColors1 = [
