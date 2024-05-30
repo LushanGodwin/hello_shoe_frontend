@@ -3,6 +3,7 @@ import {SignUpModel} from '../model/signUpModel.js';
 import {AuthApi} from "../api/authApi.js";
 
 
+
 const email = $('#username');
 const password = $('#password');
 const signInButton = $('#loginBtn');
