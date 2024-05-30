@@ -35,6 +35,8 @@ body {
     display: block;
 }
 #sidenav .logo >h1 {
+    position: relative;
+    top: 50px;
     color: #dadada;
     font-size: 20px;
 }
