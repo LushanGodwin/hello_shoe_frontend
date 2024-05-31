@@ -1,7 +1,4 @@
-const loadingScreen = document.querySelector('#registerPage');
-const loadingScreen1 = document.querySelector('#loginPage');
 const loadingScreen2 = document.querySelector('#dashboardPage');
-const loadingScreen3 = document.querySelector('#BranchPage');
 const loadingScreen4 = document.querySelector('#employeePage');
 const loadingScreen5 = document.querySelector('#productPage');
 const loadingScreen6 = document.querySelector('#orderPage');
@@ -17,10 +14,7 @@ const components5 = document.querySelector('#supplierSection');
 const components6 = document.querySelector('#stockSection');
 
 window.addEventListener('load',function (){
-    loadingScreen.style.display = 'none';
-    loadingScreen1.style.display = 'flex';
-    loadingScreen2.style.display = 'none';
-    loadingScreen3.style.display = 'none';
+    loadingScreen2.style.display = 'block';
     loadingScreen4.style.display = 'none';
     loadingScreen5.style.display = 'none';
     loadingScreen6.style.display = 'none';
@@ -32,7 +26,7 @@ window.addEventListener('load',function (){
 
 
 $(document).ready(function(){
-   $('#signUpBtn').eq(0).on('click', function() {
+   /*$('#signUpBtn').eq(0).on('click', function() {
       loadingScreen1.style.display = 'none';
       loadingScreen.style.display = 'block';
       loadingScreen2.style.display = 'none';
@@ -45,9 +39,9 @@ $(document).ready(function(){
       loadingScreen9.style.display = 'none';
 
 
-   });
+   });*/
 
-    $('#signUpBtn1').eq(0).on('click', function() {
+    /*$('#signUpBtn1').eq(0).on('click', function() {
         loadingScreen1.style.display = 'block';
         loadingScreen.style.display = 'none';
         loadingScreen2.style.display = 'none';
@@ -58,10 +52,10 @@ $(document).ready(function(){
         loadingScreen7.style.display = 'none';
         loadingScreen8.style.display = 'none';
         loadingScreen9.style.display = 'none';
-    });
+    });*/
 
 
-    $('#BranchBtn').eq(0).on('click', function() {
+    /*$('#BranchBtn').eq(0).on('click', function() {
         loadingScreen1.style.display = 'none';
         loadingScreen.style.display = 'none';
         loadingScreen2.style.display = 'none';
@@ -73,9 +67,9 @@ $(document).ready(function(){
         loadingScreen8.style.display = 'none';
         loadingScreen9.style.display = 'none';
 
-    });
+    });*/
 
-    $('#BranchBtn1').eq(0).on('click', function() {
+    /*$('#BranchBtn1').eq(0).on('click', function() {
         loadingScreen1.style.display = 'block';
         loadingScreen.style.display = 'none';
         loadingScreen2.style.display = 'none';
@@ -87,7 +81,7 @@ $(document).ready(function(){
         loadingScreen8.style.display = 'none';
         loadingScreen9.style.display = 'none';
 
-    });
+    });*/
 
     $('#dashboard').eq(0).on('click', function() {
        components.style.display = 'block';
@@ -207,11 +201,6 @@ let countries = [
     "Zimbabwe"
 ];
 
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('loginPage').style.display = 'none';
-});
 
 
 
