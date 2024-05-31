@@ -29,6 +29,7 @@ signInButton.on('click', (event) => {
     const signInModel = new SignInModel(email.val(), password.val());
     authApi.signIn(signInModel).then((response) => {
         globalToken = response.token;
+        window.location.href = "index.html"
         console.log(globalToken);
         /*Swal.fire({
             icon: 'success',
