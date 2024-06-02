@@ -1,7 +1,7 @@
 import {SignInModel} from '../model/signInModel.js';
 import {SignUpModel} from '../model/signUpModel.js';
 import {AuthApi} from "../api/authApi.js";
-
+import {BranchApi} from "../api/branchApi.js";
 
 
 const email = $('#username');
@@ -11,17 +11,37 @@ const signUpButton = $('#signUpBtn1');
 const username=$('#username1');
 const password1=$('#password1');
 const role = $('#roleId')
+const branch=$('#signup-branch');
 
 
 const authApi = new AuthApi();
+const branchApi = new BranchApi();
 let globalToken = null;
 
-const loadingScreen = document.querySelector('#loginPage');
+/*const loadingScreen = document.querySelector('#loginPage');
 const loadingScreen2 = document.querySelector('#registerPage');
 const loadingScreen3 = document.querySelector('#dashboardPage');
 const loadingScreen4 = document.querySelector('#setBranchPage');
-const loadingScreen5 = document.querySelector('#sidenav');
+const loadingScreen5 = document.querySelector('#sidenav');*/
 
+
+function populateBranchComboBox() {
+    branchApi.getAllBranch()
+        .then((responseText) => {
+            console.log(responseText);
+            responseText.forEach((branch) => {
+                $('#signup-branch').append(
+                    `<option value="${branch.branchId}">${branch.branchName}</option>`
+                );
+            });
+        })
+        .catch((error) => {
+            console.log(error);
+            showError('fetch Unsuccessful', error);
+        });
+}
+
+populateBranchComboBox();
 signInButton.on('click', (event) => {
 
     console.log('SignIn clicked');
@@ -30,6 +50,7 @@ signInButton.on('click', (event) => {
     authApi.signIn(signInModel).then((response) => {
         globalToken = response.token;
         window.location.href = "index.html"
+        localStorage.setItem('authToken',globalToken);
         console.log(globalToken);
         /*Swal.fire({
             icon: 'success',
@@ -38,10 +59,11 @@ signInButton.on('click', (event) => {
             footer: '<a href="">Proceed to Dashboard</a>',
             showConfirmButton: false,
             timer: 3000,
-        });
-        signUpForm[0].reset();*/
+        }).text(()=>{
 
-        loadingScreen.style.display = 'none';
+        });*/
+
+        /*loadingScreen.style.display = 'none';
 
         loadingScreen2.style.display = 'none';
 
@@ -49,7 +71,7 @@ signInButton.on('click', (event) => {
 
         loadingScreen4.style.display = 'none';
 
-        loadingScreen5.style.display = 'block';
+        loadingScreen5.style.display = 'block';*/
 
         email.val('');
         password.val('');
@@ -60,16 +82,17 @@ signInButton.on('click', (event) => {
 
 signUpButton.on('click', (event) => {
     event.preventDefault();
-    const signUpModel = new SignUpModel(username.val(), password1.val() ,role.val());
+    const signUpModel = new SignUpModel(username.val(), password1.val() ,role.val(),branch.val());
     authApi.signUp(signUpModel).then((response) => {
         globalToken = response.token;
 
         username.val('');
         password1.val('');
         role.val('');
+        branch.val('');
 
     }).catch((error) => {'Sign Up Unable',error.message})
-})
+});
 
 
 function showError(title, text) {
