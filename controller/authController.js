@@ -49,19 +49,19 @@ signInButton.on('click', (event) => {
     const signInModel = new SignInModel(email.val(), password.val());
     authApi.signIn(signInModel).then((response) => {
         globalToken = response.token;
-        window.location.href = "index.html"
+
         localStorage.setItem('authToken',globalToken);
         console.log(globalToken);
-        /*Swal.fire({
+        Swal.fire({
             icon: 'success',
             title: 'Signed Up Successfully!',
             text: 'Welcome to HelloShoeShop!',
             footer: '<a href="">Proceed to Dashboard</a>',
             showConfirmButton: false,
             timer: 3000,
-        }).text(()=>{
-
-        });*/
+        }).then(()=>{
+            window.location.href = "index.html"
+        });
 
         /*loadingScreen.style.display = 'none';
 
@@ -77,7 +77,8 @@ signInButton.on('click', (event) => {
         password.val('');
 
 
-    }).catch(error => showError('Log In Unsuccessful', error.message));
+    }).catch(error => showError('Log In Unsuccessful', error.message)
+    );
 });
 
 signUpButton.on('click', (event) => {

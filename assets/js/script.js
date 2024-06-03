@@ -5,6 +5,7 @@ const loadingScreen6 = document.querySelector('#orderPage');
 const loadingScreen7 = document.querySelector('#customerPage');
 const loadingScreen8 = document.querySelector('#supplierPage');
 const loadingScreen9 = document.querySelector('#stockPage');
+const loadingScreen10 = document.querySelector('#itemPage');
 const components = document.querySelector('#dashboardComponents');
 const components1 = document.querySelector('#employeeSection');
 const components2 = document.querySelector('#productSection');
@@ -12,6 +13,7 @@ const components3 = document.querySelector('#orderSection');
 const components4 = document.querySelector('#customerSection');
 const components5 = document.querySelector('#supplierSection');
 const components6 = document.querySelector('#stockSection');
+const components7 = document.querySelector('#itemSection');
 
 window.addEventListener('load',function (){
     loadingScreen2.style.display = 'block';
@@ -22,6 +24,7 @@ window.addEventListener('load',function (){
     loadingScreen8.style.display = 'none';
     loadingScreen6.style.display = 'none';
     loadingScreen9.style.display = 'none';
+    loadingScreen10.style.display = 'none';
 });
 
 
@@ -91,9 +94,10 @@ $(document).ready(function(){
         components4.style.display = 'none';
         components5.style.display = 'none';
         components6.style.display = 'none';
+        components7.style.display = 'none';
     });
 
-    $('#employee').eq(0).on('click', function() {
+    $('#employees').eq(0).on('click', function() {
         loadingScreen4.style.display = 'block';
         components.style.display = 'none';
         components1.style.display = 'block';
@@ -102,6 +106,7 @@ $(document).ready(function(){
         components4.style.display = 'none';
         components5.style.display = 'none';
         components6.style.display = 'none';
+        components7.style.display = 'none';
     });
 
     $('#customers').eq(0).on('click', function() {
@@ -113,9 +118,10 @@ $(document).ready(function(){
         components4.style.display = 'block';
         components5.style.display = 'none';
         components6.style.display = 'none';
+        components7.style.display = 'none';
     });
 
-    $('#product').eq(0).on('click', function() {
+    $('#products').eq(0).on('click', function() {
         loadingScreen5.style.display = 'block';
         components.style.display = 'none';
         components1.style.display = 'none';
@@ -124,6 +130,7 @@ $(document).ready(function(){
         components4.style.display = 'none';
         components5.style.display = 'none';
         components6.style.display = 'none';
+        components7.style.display = 'none';
     });
 
     $('#order').eq(0).on('click', function() {
@@ -135,6 +142,7 @@ $(document).ready(function(){
         components4.style.display = 'none';
         components5.style.display = 'none';
         components6.style.display = 'none';
+        components7.style.display = 'none';
     });
 
     $('#suppliers').eq(0).on('click', function() {
@@ -146,9 +154,10 @@ $(document).ready(function(){
         components4.style.display = 'none';
         components5.style.display = 'block';
         components6.style.display = 'none';
+        components7.style.display = 'none';
     });
 
-    $('#stock').eq(0).on('click', function() {
+    $('#stocks').eq(0).on('click', function() {
         loadingScreen9.style.display = 'block';
         components.style.display = 'none';
         components1.style.display = 'none';
@@ -157,7 +166,20 @@ $(document).ready(function(){
         components4.style.display = 'none';
         components5.style.display = 'none';
         components6.style.display = 'block';
+        components7.style.display = 'none';
     });
+
+    $('#items').eq(0).on('click', function() {
+        loadingScreen10.style.display = 'block';
+        components.style.display = 'none';
+        components1.style.display = 'none';
+        components2.style.display = 'none';
+        components3.style.display = 'none';
+        components4.style.display = 'none';
+        components5.style.display = 'none';
+        components6.style.display = 'none';
+        components7.style.display = 'block';
+    })
 
     $('#logout').eq(0).on('click', function() {
        loadingScreen1.style.display = 'block';
@@ -170,6 +192,7 @@ $(document).ready(function(){
        loadingScreen7.style.display = 'none';
        loadingScreen8.style.display = 'none';
        loadingScreen9.style.display = 'none';
+       loadingScreen10.style.display = 'none';
 
     });
 });
