@@ -33,6 +33,7 @@ export class ProductListApi{
     }
 
     async deleteGender(genId) {
+        console.log(genId);
         return this.handleHttpRequest(`http://localhost:8080/shoe/api/v1/inventory/genderDelete?id=${genId}`, "DELETE");
     }
 

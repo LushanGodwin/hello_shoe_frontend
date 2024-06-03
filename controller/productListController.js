@@ -61,6 +61,7 @@ $(document).ready(function () {
        genderHeading.text(headingText);
        genderSaveUpdateBtn.text(buttonText);
        genderSaveUpdateBtn.removeClass('btn-success btn-warning').addClass(btnClass);
+       console.log("opengender")
    }
 
    genderAddBtn.on('click',function (){
@@ -79,7 +80,7 @@ $(document).ready(function () {
                         <th row='span'>${gender.genderCode}</th>
                         <td>${gender.gender_desc}</td>
                         <td>
-                            <button class="updateBtn btn btn-warning btn-sm" data-toggle="modal" data-target="#genderModel"
+                            <button class="updateBtn btn btn-warning btn-sm" data-toggle="modal" data-target="#genderModal"
                                 data-gender-code="${gender.genderCode}" data-gender-desc="${gender.gender_desc}">
                                 Edit
                             </button>
@@ -149,13 +150,14 @@ $(document).ready(function () {
     });
 
     genderTableBody.on('click', '.updateBtn', function () {
-        const genderCode = $(this).data('gender-id');
+        const genderCode = $(this).data('gender-code');
         const genderDesc = $(this).data('gender-desc');
+        console.log(genderCode +' '+ genderDesc)
         openGenderModal('Update Gender', 'Update', 'btn-warning', genderCode, genderDesc);
     });
 
     genderTableBody.on('click', '.deleteBtn', function () {
-        const genId = $(this).data('gender-id');
+        const genId = $(this).data('gender-code');
         deleteGender(genId);
     });
 
@@ -283,13 +285,13 @@ $(document).ready(function () {
     });
 
     occasionTableBody.on('click', '.updateBtn', function () {
-        const occasionCode = $(this).data('occasion-id');
-        const occasionDesc = $(this).data('occasion-name');
+        const occasionCode = $(this).data('occasion-code');
+        const occasionDesc = $(this).data('occasion-desc');
         openOccasionModal('Update Occasion', 'Update', 'btn-warning', occasionCode, occasionDesc);
     });
 
     occasionTableBody.on('click', '.deleteBtn', function () {
-        const occId = $(this).data('occasion-id');
+        const occId = $(this).data('occasion-code');
         deleteOccasion(occId);
     });
 
@@ -429,13 +431,13 @@ $(document).ready(function () {
     });
 
     sizeTableBody.on('click', '.updateBtn', function () {
-        const sizeCode = $(this).data('size-id');
+        const sizeCode = $(this).data('size-code');
         const sizeDesc = $(this).data('size-desc');
         openSizeModal('Update Size', 'Update', 'btn-warning', sizeCode, sizeDesc);
     });
 
     sizeTableBody.on('click', '.deleteBtn', function () {
-        const sizeId = $(this).data('size-id');
+        const sizeId = $(this).data('size-code');
         deleteSize(sizeId);
     });
 
@@ -562,13 +564,13 @@ $(document).ready(function () {
     });
 
     varietyTableBody.on('click', '.updateBtn', function () {
-        const varietyCode = $(this).data('variety-id');
-        const varietyDesc = $(this).data('variety-name');
+        const varietyCode = $(this).data('variety-code');
+        const varietyDesc = $(this).data('variety-desc');
         openVarietyModal('Update Variety', 'Update', 'btn-warning', varietyCode, varietyDesc);
     });
 
     varietyTableBody.on('click', '.deleteBtn', function () {
-        const varId = $(this).data('variety-id');
+        const varId = $(this).data('variety-code');
         deleteVariety(varId);
     });
 
