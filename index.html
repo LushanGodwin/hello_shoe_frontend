@@ -15,7 +15,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
@@ -23,61 +22,107 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
 <section id="dashboardPage">
-    <div class="app">
-        <div id="sidenav">
-            <div class="wrapper">
-                <div class="logo">
-                    <h1>Hello Shoe Pvt.Ltd</h1>
-                    <a  class="nav-icon pull-right"></a>
+    <div class="flex bg-gray-100">
+        <div class="w-64 h-screen bg-gray-800 text-white">
+            <div class="p-6">
+                <h1 class="text-2xl font-bold mb-5">Dashboard</h1>
+                <ul id="navigation">
+                    <li id="dashboard" class="mb-4"><a href="#" class="flex items-center text-gray-300 hover:text-white"><i class="fas fa-compass mr-3"></i> Dashboard</a></li>
+                    <li id="employees" class="mb-4"><a href="#" class="flex items-center text-gray-300 hover:text-white"><i class="fas fa-users mr-3"></i> Employees</a></li>
+                    <li id="products" class="mb-4"><a href="#" class="flex items-center text-gray-300 hover:text-white"><i class="fas fa-box mr-3"></i> Product List</a></li>
+                    <li id="items" class="mb-4"><a href="#" class="flex items-center text-gray-300 hover:text-white"><i class="fas fa-tag mr-3"></i> Items</a></li>
+                    <li id="order" class="mb-4"><a href="#" class="flex items-center text-gray-300 hover:text-white"><i class="fas fa-receipt mr-3"></i> Orders</a></li>
+                    <li id="customers" class="mb-4"><a href="#" class="flex items-center text-gray-300 hover:text-white"><i class="fas fa-user mr-3"></i> Customers</a></li>
+                    <li id="suppliers" class="mb-4"><a href="#" class="flex items-center text-gray-300 hover:text-white"><i class="fas fa-truck mr-3"></i> Suppliers</a></li>
+                    <li id="stocks" class="mb-4"><a href="#" class="flex items-center text-gray-300 hover:text-white"><i class="fas fa-warehouse mr-3"></i> Stock</a></li>
+                    <li class="mb-4"><a href="#" class="flex items-center text-gray-300 hover:text-white"><i class="fas fa-undo mr-3"></i> Returns</a></li>
+                    <li class="mt-10"><a href="#" class="flex items-center text-red-400 hover:text-red-600"><i class="fas fa-sign-out-alt mr-3"></i> Sign Out</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="dashboardComponents">
+        <!-- Main Content -->
+        <div class="flex-1 p-10">
+            <!-- Search Bar -->
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-3xl font-bold">Welcome to the Shoe Shop Dashboard</h2>
+                <div class="relative">
+                    <input type="text" class="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none" placeholder="Search...">
+                    <button type="submit" class="absolute right-0 top-0 mt-2 mr-4">
+                        <i class="fas fa-search text-gray-400"></i>
+                    </button>
                 </div>
-                <div class="menu">
-                    <ul>
-                        <li id="dashboard"><a><i class="fa-regular fa-compass" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dashboard</a></li>
-                        <li id="employees"><a><i class="fa-solid fa-users" style="color: #ffffff;"></i>&nbsp;&nbsp;Employee</a></li>
-                        <li id="products"><a><i class="fa-solid fa-users" style="color: #ffffff;"></i>&nbsp;&nbsp;ProductList</a></li>
-                        <li id="items"><a><i class="fa-solid fa-users" style="color: #ffffff;"></i>&nbsp;&nbsp;Item</a></li>
-                        <li id="order"><a><i class="fa-solid fa-users" style="color: #ffffff;"></i>&nbsp;&nbsp;Order</a></li>
-                        <li id="customers"><a><i class="fa-regular fa-user" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Customer</a></li>
-                        <li id="suppliers"><a><i class="fa-solid fa-users" style="color: #ffffff;"></i>&nbsp;&nbsp;Supplier</a></li>
-                        <li id="stocks"><a><i class="fa-solid fa-universal-access" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Stock</a></li>
-                        <li id="logout"><a class="logout"><i class="fa-solid fa-arrow-right-from-bracket" style="color: #ffffff;"></i>&nbsp;&nbsp;&nbsp;Sign Out</a></li>
-                    </ul>
+            </div>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-2xl font-bold text-gray-700">150</span>
+                        <i class="fas fa-users text-blue-500 text-3xl"></i>
+                    </div>
+                    <p class="text-gray-500">Total Employees</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-2xl font-bold text-gray-700">230</span>
+                        <i class="fas fa-box text-green-500 text-3xl"></i>
+                    </div>
+                    <p class="text-gray-500">Total Products</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-2xl font-bold text-gray-700">320</span>
+                        <i class="fas fa-receipt text-red-500 text-3xl"></i>
+                    </div>
+                    <p class="text-gray-500">Total Orders</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-purple-500">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="text-2xl font-bold text-gray-700">85</span>
+                        <i class="fas fa-warehouse text-purple-500 text-3xl"></i>
+                    </div>
+                    <p class="text-gray-500">Total Stock</p>
+                </div>
+            </div>
+
+            <!-- Example Charts and Shoe Images -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4">Sales Overview</h3>
+                    <canvas id="salesChart"></canvas>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4">Top Products</h3>
+                    <div class="flex flex-wrap">
+                        <div class="w-1/2 p-2">
+                            <img src="./assets/image/file.png" alt="Shoe Image" class="rounded-lg">
+                            <p class="text-center mt-2">Product 1</p>
+                        </div>
+                        <div class="w-1/2 p-2">
+                            <img src="./assets/image/file1.png" alt="Shoe Image" class="rounded-lg">
+                            <p class="text-center mt-2">Product 2</p>
+                        </div>
+                        <div class="w-1/2 p-2">
+                            <img src="./assets/image/file2.png" alt="Shoe Image" class="rounded-lg">
+                            <p class="text-center mt-2">Product 3</p>
+                        </div>
+                        <div class="w-1/2 p-2">
+                            <img src="./assets/image/file3.png" alt="Shoe Image" class="rounded-lg">
+                            <p class="text-center mt-2">Product 4</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div id="dashboardComponents" class="section active">
-                <div id="shoePic"></div>
-                <div id="customerCount">
-                    <label>Customer Count</label>
-                    <span>100</span>
-                </div>
-                <div id="stockCount">
-                    <label>Stock Count</label>
-                    <span>100</span>
-                </div>
-                <div id="orderCount">
-                    <label>Order Count</label>
-                    <span>100</span>
-                </div>
-                <div id="employeeCount">
-                    <label>Employee Count</label>
-                    <span>100</span>
-                </div>
-
-            <section class="chart" id="chart_id">
-                <canvas id="myChart"></canvas>
-            </section>
-
-            <section class="chart" id="chart_id1">
-                <canvas id="myChart1"></canvas>
-            </section>
-        </div>
-
-
     </div>
 </section>
 <section id="employeePage" class="section">
@@ -125,11 +170,11 @@
                                                 <div class="modal-content">
                                                     <div class="modal-body">
                                                         <form id="employeeForm">
-                                                            <h4 id="employeeFormHeading">Add New Employee</h4>
+                                                            <h4 id="employeeFormHeading">Update Employee</h4>
                                                             <div class="form-row">
                                                                 <div class="form-group col-12 text-center">
                                                                     <img id="emp-image-preview"
-                                                                         src="img/previewImg.jpg"
+                                                                         src="img/noImageUser.jpg"
                                                                          alt="Item Image" class="img-fluid mb-3"
                                                                          style="max-height: 200px;">
                                                                 </div>
@@ -169,7 +214,12 @@
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-6">
                                                                     <label for="status">Status</label>
-                                                                    <input type="text" class="form-control" id="status" placeholder="Enter Status">
+                                                                    <select class="form-control" id="status" required>
+                                                                        <option value="">Select Status</option>
+                                                                        <option value="LOW">Low</option>
+                                                                        <option value="AVAILABLE">Available</option>
+                                                                        <option value="NOTAVAILABLE">Not Available</option>
+                                                                    </select>
                                                                 </div>
                                                                 <div class="form-group col-md-6">
                                                                     <label for="designation">Designation</label>
@@ -179,7 +229,7 @@
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-6">
                                                                     <label for="accessRole">Access Role</label>
-                                                                    <select class="form-control" id="accessRole" required>
+                                                                    <select class="form-control" id="accessRole" required disabled>
                                                                         <option value="">Select Access Role</option>
                                                                         <option value="ADMIN">Admin</option>
                                                                         <option value="USER">User</option>
@@ -193,11 +243,11 @@
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-6">
                                                                     <label for="emp-JoinDate">Join Date</label>
-                                                                    <input type="date" class="form-control" id="emp-JoinDate" required>
+                                                                    <input type="date" class="form-control" id="emp-JoinDate" required disabled>
                                                                 </div>
                                                                 <div class="form-group col-md-6">
                                                                     <label for="attachedBranch">Attached Branch</label>
-                                                                    <input type="text" class="form-control" id="attachedBranch" placeholder="Enter Attached Branch" required>
+                                                                    <input type="text" class="form-control" id="attachedBranch" placeholder="Enter Attached Branch" required disabled>
                                                                 </div>
                                                             </div>
                                                             <div class="form-row">
@@ -233,7 +283,7 @@
                                                             <div class="form-row">
                                                                 <div class="form-group col-md-6">
                                                                     <label for="empEmail">Email</label>
-                                                                    <input type="email" class="form-control" id="empEmail" placeholder="Enter Email" required>
+                                                                    <input type="email" class="form-control" id="empEmail" placeholder="Enter Email" required disabled>
                                                                 </div>
                                                                 <div class="form-group col-md-6">
                                                                     <label for="emergencyContactPerson">Emergency Contact Person</label>
@@ -246,7 +296,7 @@
                                                                     <input type="tel" class="form-control" id="emergencyContact" placeholder="Enter Emergency Contact" pattern="^\+?[0-9\-\\s]+$" required>
                                                                 </div>
                                                             </div>
-                                                            <button type="submit" class="btn btn-success" id="empSaveUpdateButton">Save</button>
+                                                            <button type="submit" class="btn btn-warning" id="empUpdateBtn">Update</button>
                                                             <button type="button" class="btn btn-dark" id="empClear">Clear</button>
                                                             <button hidden type="reset" class="btn btn-dark" id="empReset">Reset</button>
                                                         </form>
@@ -855,7 +905,7 @@
                                         <div class="card-body p-0">
                                             <div class="table-responsive table-scroll" style="position: relative; height: 500px;">
                                                 <table class="table table-striped mb-0">
-                                                    <thead style="background-color: #002d72; text-align: center;">
+                                                    <thead style="background-color: #320D27; color: #dadada; text-align: center;">
                                                     <tr>
                                                         <th scope="col">Stock ID</th>
                                                         <th scope="col">Supply Date</th>
@@ -1102,6 +1152,7 @@
 
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="assets/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 
 <script type="module" src="controller/customerController.js"></script>
@@ -1112,55 +1163,43 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script>
-    const xValues = ["Jan", "Feb", "Mar", "Apr", "May"];
-    const yValues = [55, 49, 44, 24, 19];
-    const barColors = ["#440504", "#C34509","#220716","#17BCC1","#B19260"];
-
-    new Chart("myChart", {
-        type: "bar",
+    var ctx = document.getElementById('salesChart').getContext('2d');
+    var salesChart = new Chart(ctx, {
+        type: 'bar',
         data: {
-            labels: xValues,
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
             datasets: [{
-                backgroundColor: barColors,
-                data: yValues
+                label: 'Sales',
+                data: [1200, 1900, 3000, 500, 2000, 3000],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
             }]
         },
         options: {
-            legend: {display: false},
-            title: {
-                display: true,
-                text: "Hello Shoe World"
-            }
-        }
-    });
-</script>
-
-<script>
-    const xValues1 = ["Italy", "France", "Spain", "USA", "Argentina"];
-    const yValues1 = [55, 49, 44, 24, 15];
-    const barColors1 = [
-        "#440504", "#C34509","#220716","#17BCC1","#B19260"
-    ];
-
-    new Chart("myChart1", {
-        type: "pie",
-        data: {
-            labels: xValues1,
-            datasets: [{
-                backgroundColor: barColors1,
-                data: yValues1
-            }]
-        },
-        options: {
-            title: {
-                display: true,
-                text: "World Wide Shoe Production 2024"
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
         }
     });
