@@ -48,9 +48,11 @@ signInButton.on('click', (event) => {
     event.preventDefault();
     const signInModel = new SignInModel(email.val(), password.val());
     authApi.signIn(signInModel).then((response) => {
-        globalToken = response.token;
+        /*globalToken = response.token;
 
-        localStorage.setItem('authToken',globalToken);
+        localStorage.setItem('authToken',globalToken);*/
+        document.cookie = "username=" + email.val() + "; path=/";
+        document.cookie = "token=" + response+";path=/";
         console.log(globalToken);
         Swal.fire({
             icon: 'success',
@@ -63,16 +65,6 @@ signInButton.on('click', (event) => {
             window.location.href = "index.html"
         });
 
-        /*loadingScreen.style.display = 'none';
-
-        loadingScreen2.style.display = 'none';
-
-        loadingScreen3.style.display = 'block';
-
-        loadingScreen4.style.display = 'none';
-
-        loadingScreen5.style.display = 'block';*/
-
         email.val('');
         password.val('');
 
@@ -84,15 +76,21 @@ signInButton.on('click', (event) => {
 signUpButton.on('click', (event) => {
     event.preventDefault();
     const signUpModel = new SignUpModel(username.val(), password1.val() ,role.val(),branch.val());
-    authApi.signUp(signUpModel).then((response) => {
-        globalToken = response.token;
 
-        username.val('');
-        password1.val('');
-        role.val('');
-        branch.val('');
-
-    }).catch((error) => {'Sign Up Unable',error.message})
+        authApi.signUp(signUpModel)
+            .then(response => {
+                globalToken = response.token;
+                console.log(globalToken);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Signed Up Successfully!',
+                    text: 'Welcome to HelloShoeShop!',
+                    footer: '<a href="">Proceed to Dashboard</a>',
+                    showConfirmButton: false,
+                    timer: 3000,
+                });
+            })
+            .catch(error => showError('Sign Up Unsuccessful', error.message));
 });
 
 

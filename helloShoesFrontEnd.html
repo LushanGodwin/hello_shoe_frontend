@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="assets/style/branchPage.css">
     <link rel="stylesheet" href="assets/style/registerPage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">-->
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">-->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>-->
 </head>
 <body>
 <section id="loginPage">
@@ -41,8 +41,17 @@
         <label for="password1">Password</label>
         <input type="password" placeholder="Password" id="password1">
 
-        <label for="roleId">Role</label>
-        <input type="text" placeholder="Role" id="roleId">
+        <label for="roleId">Select Role</label>
+        <select id="roleId" required>
+            <option value="" disabled selected>Select Role</option>
+            <option value="USER">User</option>
+            <option value="ADMIN">Manager</option>
+        </select>
+
+        <label for="signup-branch">Select Branch</label>
+        <select id="signup-branch" required>
+            <option value="" disabled selected>Select Branch</option>
+        </select>
 
         <a ><button type="button" id="signUpBtn1">Sign Up</button></a>
         <a ><button type="button" id="BranchBtn">Set Branch</button></a>

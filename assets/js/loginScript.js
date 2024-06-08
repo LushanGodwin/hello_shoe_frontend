@@ -16,6 +16,12 @@ $(document).ready(function(){
         loadingScreen3.style.display = 'none';
         loadingScreen2.style.display = 'none';
     });
+    $('#signUpBtn1').eq(0).on('click', function() {
+        loadingScreen1.style.display = 'block';
+        loadingScreen.style.display = 'none';
+        loadingScreen3.style.display = 'none';
+        loadingScreen2.style.display = 'none';
+    });
 
     $('#signInBtn').eq(0).on('click', function() {
         loadingScreen1.style.display = 'none';
@@ -23,6 +29,7 @@ $(document).ready(function(){
         loadingScreen3.style.display = 'none';
         loadingScreen2.style.display = 'block';
     });
+
     $('#BranchBtn').eq(0).on('click', function() {
         loadingScreen1.style.display = 'none';
         loadingScreen.style.display = 'none';
@@ -30,8 +37,8 @@ $(document).ready(function(){
         loadingScreen2.style.display = 'none';
     });
     $('#BranchBtn1').eq(0).on('click', function () {
-        loadingScreen1.style.display = 'block';
-        loadingScreen.style.display = 'none';
+        loadingScreen1.style.display = 'none';
+        loadingScreen.style.display = 'block';
         loadingScreen3.style.display = 'none';
         loadingScreen2.style.display = 'none';
     });

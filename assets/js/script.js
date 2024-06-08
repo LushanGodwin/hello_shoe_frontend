@@ -133,7 +133,7 @@ $(document).ready(function(){
         components7.style.display = 'none';
     });
 
-    $('#order').eq(0).on('click', function() {
+    $('#orders').eq(0).on('click', function() {
         loadingScreen6.style.display = 'block';
         components.style.display = 'none';
         components1.style.display = 'none';
